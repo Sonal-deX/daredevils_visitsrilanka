@@ -27,7 +27,7 @@ const { chatGptAsk } = require('../chatgpt');
 // create applicant route
 router.post('/applicant', upload.fields([{ name: 'passImage' }, { name: 'passBio' }]), applicantController.createApplicant)
 router.get('/applicant', applicantController.getApplicant)
-router.put('/applicant', applicantController.updateApplicantApproveStatus)
+router.put('/applicant', verifyToken, applicantController.updateApplicantApproveStatus)
 
 // admin routes
 router.post('/admin', validate(createAdminValidator, ['body']), adminController.createAdmin)

@@ -2,6 +2,8 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const cron = require('node-cron');
+require('dotenv').config();
+
 
 const { processApplicants } = require('./controller/applicantController')
 

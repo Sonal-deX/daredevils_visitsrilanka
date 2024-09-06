@@ -4,10 +4,10 @@ const axios = require('axios');
 const AWS = require('aws-sdk'); // Add this line
 
 // Replace these values with your own
-const spaceName = 'zenko';
-const region = 'syd1'; // e.g., 'nyc3'
-const accessKeyId = 'DO00A9FB3R4EWXPD9V6Y';
-const secretAccessKey = 'B/wOMSAS9sL/OpsBzPuj9evAqC9khchfvv3FGtVRX2c';
+const spaceName = process.env.SPACENAME;
+const region = process.env.REGION; // e.g., 'nyc3'
+const accessKeyId = process.env.ACCESSKEYID;
+const secretAccessKey = process.env.SECRETACCESSKEY;
 
 // DigitalOcean Spaces configuration
 const spacesEndpoint = new AWS.Endpoint(`${region}.digitaloceanspaces.com`);
